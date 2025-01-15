@@ -8,21 +8,30 @@ A comprehensive suite of environments for robot learning research, accelerated b
 
 Features include:
 
-- Classic control environments from `dm_control` reimplemented in MJX.
-- Quadruped and bipedal locomotion environments.
-- Non-prehensile and dexterous manipulation environments.
-- Vision-based support via Madrona.
+- Classic control environments from `dm_control` reimplemented in MJX
+- Quadruped and bipedal locomotion environments
+- Non-prehensile and dexterous manipulation environments
+- Vision-based support via Madrona
 
 ## Installation
+
+### From PyPI
+
+```bash
+pip install playground
+```
+
+### From Source
 
 > [!IMPORTANT]
 > Requires Python 3.9 or later.
 
 1. `pip install -U "jax[cuda12]"`
     * Verify GPU backend: `python -c "import jax; print(jax.default_backend())"` should print `gpu`
-2. Clone this repository
-3. Install submodules: `git submodule update --init --recursive`
-4. `pip install -e ".[all]"`
+2. `git clone git@github.com:kevinzakka/mujoco_playground.git`
+3. `git clone git@github.com:google-deepmind/mujoco_menagerie.git`
+4. `mv mujoco_menagerie mujoco_playground/mujoco_menagerie`
+5. `pip install -e ".[all]"`
 
 ## Common Gotchas
 

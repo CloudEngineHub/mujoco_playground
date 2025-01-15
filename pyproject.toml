@@ -1,6 +1,6 @@
 [build-system]
-requires = ["flit_core >=2,<4"]
-build-backend = "flit_core.buildapi"
+requires = ["hatchling"]
+build-backend = "hatchling.build"
 
 [project]
 name = "mujoco_playground"
@@ -61,8 +61,8 @@ all = [
     "mujoco_playground[notebooks]",
 ]
 
-[tool.flit.module]
-name = "mujoco_playground"
+[tool.hatch.build.targets.wheel]
+packages = ["mujoco_playground"]
 
 [tool.ruff]
 lint.select = [
@@ -141,3 +141,24 @@ exclude = [
 ]
 output = ".pytype"
 report_errors = true
+
+[tool.hatch.build]
+artifacts = [
+    "mujoco_playground/mujoco_menagerie/google_barkour_vb/**/*",
+    "mujoco_playground/mujoco_menagerie/berkeley_humanoid/**/*",
+    "mujoco_playground/mujoco_menagerie/unitree_g1/**/*",
+    "mujoco_playground/mujoco_menagerie/unitree_go1/**/*",
+    "mujoco_playground/mujoco_menagerie/unitree_h1/**/*",
+    "mujoco_playground/mujoco_menagerie/robotis_op3/**/*",
+    "mujoco_playground/mujoco_menagerie/boston_dynamics_spot/**/*",
+    "mujoco_playground/mujoco_menagerie/aloha/**/*",
+    "mujoco_playground/mujoco_menagerie/franka_emika_panda/**/*",
+    "mujoco_playground/mujoco_menagerie/robotiq_2f85_v4/**/*",
+    "mujoco_playground/mujoco_menagerie/leap_hand/**/*"
+]
+include = [
+    "mujoco_playground/__init__.py",
+    "mujoco_playground/_src/**/*",
+    "mujoco_playground/config/**/*",
+    "mujoco_playground/experimental/**/*",
+]

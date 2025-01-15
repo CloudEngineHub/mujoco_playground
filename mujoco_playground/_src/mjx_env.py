@@ -30,7 +30,7 @@ import tqdm
 ROOT_PATH = epath.Path(__file__).parent
 # the menagerie path is used to load robot assets.
 # resource paths do not have glob implemented, so we use a bare epath.Path.
-MENAGERIE_PATH = epath.Path(__file__).parent / "../.." / "mujoco_menagerie"
+MENAGERIE_PATH = ROOT_PATH.parent / "mujoco_menagerie"
 
 
 Observation = Union[jax.Array, Mapping[str, jax.Array]]
