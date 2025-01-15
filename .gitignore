@@ -26,4 +26,5 @@ learning/*.png
 *.onnx
 !mujoco_playground/experimental/sim2sim/onnx/*.onnx
 **/.ipynb_checkpoints/
+mujoco_menagerie/
 dist/
